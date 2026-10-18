@@ -21,9 +21,10 @@ interview answer is not in `results/`, do not say it.
 > page gets layout-aware extraction first, cheap heuristics (empty layer, undecodable glyphs,
 > impossible Devanagari sequences, wrong script for the document language, non-word ratio,
 > full-page images) decide whether it goes to Tesseract `hin+eng`, and OCR output only replaces
-> the text layer if it beats it on a reference-free quality score. On a provisional reference set
-> the mean text similarity goes from about 0.50 to 0.93 overall, and from about 0.22 to 0.93 on
-> Hindi pages. The double-annotated human gold set is built with tooling in the repo.
+> the text layer if it beats it on a reference-free quality score. Against an AI-transcribed
+> reference set of 30 sampled pages (not human-verified) the mean text similarity goes from about
+> 0.56 to 0.94 overall, and from about 0.20 to 0.94 on Hindi pages. The repo has tooling for human
+> single or double annotation, which would replace that reference.
 >
 > Retrieval is hybrid: BM25 and multilingual-e5 dense vectors fused with reciprocal rank fusion,
 > then a multilingual cross-encoder reranker; storage is Postgres + pgvector HNSW + Postgres
@@ -143,10 +144,12 @@ I report both. Both are computed after the same normalisation (NFC, casefold, wh
 collapse, quote/dash unification, Devanagari digits -> ASCII) so formatting does not count as an error.
 
 ### Inter-annotator agreement
-Two people transcribe the same pages independently; their similarity / CER against each other
-is the ceiling on what any metric can resolve. If annotators disagree on 3% of characters, a
-system difference of 1% is noise. Pages where they disagree are adjudicated against the image
-(identical pages are accepted automatically). This is the text analogue of Cohen's kappa for labels.
+This is what the tooling supports, not something that has been measured: no human annotation has
+been done yet. With two people transcribing the same pages independently, their similarity / CER
+against each other is the ceiling on what any metric can resolve. If annotators disagree on 3% of
+characters, a system difference of 1% is noise. Pages where they disagree are adjudicated against
+the image (identical pages are accepted automatically). This is the text analogue of Cohen's kappa
+for labels. The current reference is a single AI transcription, so there is no agreement number.
 
 ### Routing thresholds
 Set once by looking at per-page text-layer statistics across the corpus before the gold sample
@@ -179,12 +182,25 @@ after seeing run 1, and that it fixes a degenerate tie-break rather than tuning 
 6. **What happens if OCR is worse than the text layer?** The page keeps its text layer and is
    recorded as `ocr_rejected`; 14 pages took that path (mostly empty/graphic pages).
 7. **How did you measure extraction quality?** Mean normalised similarity and CER against
-   reference transcriptions of a fixed-seed stratified sample (10 pages per stratum). Human
-   double-annotated gold is in progress; current numbers are against a provisional single-pass reference.
+   reference transcriptions of a fixed-seed stratified sample (30 pages, 10 per stratum).
+   **Who made the reference set?** Claude (Anthropic), an AI assistant, transcribed all 30 pages
+   from the rendered page images, one pass plus one self-review pass, without looking at any
+   extractor output. Nobody has verified it by hand; there is no second annotator and no
+   adjudication. It is an AI-transcribed reference set, not human gold. The repo's tooling supports
+   human single or double annotation, which would replace it.
+   **Isn't that circular?** Partly, and say so: an AI transcriber reading images could share error
+   patterns with OCR (the same hard-to-read conjunct or degraded word read the same wrong way),
+   which would make OCR look better than it is. The huge Hindi/scan gaps (0.20 -> 0.94) are far
+   larger than any plausible shared error, but small differences should not be trusted until a
+   human checks the pages.
 8. **Why stratify the sample?** A random 30 pages from this corpus would be mostly English digital
    pages, where everything works; stratifying guarantees the hard strata are measured.
-9. **What is the provisional result?** Overall similarity 0.500 (pypdf) -> 0.928 (cascade); Hindi
-   0.216 -> 0.932; scanned 0.298 -> 0.860; English unchanged at ~0.99. n = 12 pages, so wide CIs.
+9. **What is the result?** Against the AI-transcribed reference (30 pages, not human-verified):
+   overall similarity 0.561 (pypdf) -> 0.935 (cascade), CER 0.485 -> 0.106; Hindi 0.195 -> 0.935
+   (CER 0.899 -> 0.115); scanned 0.595 -> 0.917 (CER 0.442 -> 0.124); English 0.894 -> 0.954
+   (CER 0.115 -> 0.078). The English gap is one flowchart page where pypdf gets almost nothing and
+   OCR is routed in; the other 9 English pages are above 0.96 either way. n = 10 per stratum, so
+   the CIs are still wide (overall cascade 0.90-0.96).
 10. **Why is "layout" barely better than pypdf on similarity?** Layout parsing changes structure
     (reading order, tables, headings), which the whitespace-collapsing similarity mostly ignores;
     its benefit shows up in chunking and citations, not in character accuracy.
@@ -245,16 +261,18 @@ after seeing run 1, and that it fixes a degenerate tie-break rather than tuning 
 33. **Why Hindi questions?** The Hindi documents are only searchable after OCR, so Hindi recall is
     the clearest downstream measure of the cascade (compare `retrieval_eval.md` with
     `retrieval_eval_pypdf.md`).
-34. **What would you do with one more week?** Human gold annotation (in progress), deskew + column
+34. **What would you do with one more week?** Human annotation of the 30 sample pages, deskew + column
     detection before OCR, NLI-based verification, paraphrased/cross-lingual questions, and a
     Gemini-generated answer evaluation with the same verifier.
 
 ## 5. Honest weak spots (and how to answer them)
 
-* **The headline extraction numbers are provisional.** They use a 12-page single-pass reference
-  transcribed by an AI assistant, not the double-annotated human gold. Say exactly that, and that
-  the tooling for the human gold is done and the resume number will be updated from it.
-* **Small evaluation sets.** 12 reference pages; 58 questions with 10 unanswerable. Confidence
+* **The extraction reference is AI-transcribed, not human gold.** All 30 sample pages were
+  transcribed by Claude (Anthropic) from page images (single pass plus one self-review, no
+  extractor output seen), and nobody has verified them by hand. Say exactly that. Add the
+  circularity caveat: an AI-transcribed reference could share error patterns with OCR and flatter
+  it. The tooling supports human single or double annotation, which would replace the set.
+* **Small evaluation sets.** 30 reference pages; 58 questions with 10 unanswerable. Confidence
   intervals are wide; differences of a few points between retrieval modes are not significant.
 * **Questions were drafted by the builder (with AI help) from the documents.** This favours
   lexical matching. Owner review and paraphrased questions are pending.

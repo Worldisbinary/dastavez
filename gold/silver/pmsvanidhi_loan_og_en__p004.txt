@@ -1,0 +1,27 @@
+5. Nature of Support
+
+5.1 Working Capital Term Loan
+
+The loan facility will be extended in three tranches, with each subsequent tranche being disbursed only upon full repayment of the preceding one. All loans will be collateral-free, offered for a defined tenure, and repayable through monthly installments.
+
+S. No. | Loan Tranche | Loan Amount | Loan Tenure
+1. | 1st Tranche | upto ₹15,000 | 12 months
+2. | 2nd Tranche | upto ₹25,000 | 18 months
+3. | 3rd Tranche | upto ₹50,000 | 36 months
+
+The tranche wise details of the loans are mentioned in Annexure 1.
+
+Additionally, proactive handholding support should be extended to SVs to help them complete the necessary documentation and formalities, thereby facilitating easier access to credit.
+
+5.2 Interest Subsidy
+
+SVs availing loans under the scheme will be eligible for an interest subsidy at the rate of 7% per annum. The subsidy will be credited directly to the borrower's account on a quarterly basis.
+
+LIs are required to submit quarterly interest subsidy claims on Paisa Portal (https://www.paisaportal.in/NULM/Login.aspx) for the periods ending on June 30, September 30, December 31, and March 31 of each financial year.
+Interest subsidy will be admissible only for loan accounts that are classified as 'Standard' (non-NPA) as per prevailing RBI guidelines on the respective claim dates. Furthermore, the subsidy will be applicable only for the months within a quarter during which the account was classified as Standard.
+
+All loans disbursed till March 31, 2030 would be eligible for interest subsidy and LIs should claim interest subsidy for a quarter in the subsequent quarter itself. However, all claims for interest subsidy benefit to be claimed by the LIs well before March 31, 2033.
+
+Tranche wise maximum eligible subsidy amount is mentioned in Annexure 2.
+
+4

@@ -1,0 +1,23 @@
+Pradhan Mantri Awas Yojana (Urban) 2.0 : Scheme Guidelines
+
+29 | Whether structure design has been vetted by IIT/ NIT or any other? (Yes/No) please upload/attach the documents
+30 | DPR uploaded on portal? (Yes/No) (Upload DPR online prior to approval of CSMC)
+31 | Whether trunk infrastructure is existing or is being provided through AMRUT or any other Scheme? (Yes/No) Details thereof
+32 | Whether the provision of Civic infrastructure has been made as per applicable State norms/ CPHEEO/ IS Code/ NBC
+i. Water Supply (Yes/No)
+ii. Sewerage (Yes/No)
+iii. Road (Yes/No)
+iv. Storm water Drain (Yes/No)
+v. External Electrification (Yes/No)
+vi. Solar Light (Yes/No)
+vii. Solid Waste management (Yes/ No)
+viii. Adequate plantation with the project site (Yes/No)
+ix. Provision of ramp facility
+x. Any other, specify
+33 | Whether adequate social infrastructure facilities covered in the project; If no, whether the same are available in vicinity? Details thereof
+34 | Whether disaster (earthquake, flood, cyclone, land-: slide etc.) resistant features have been adopted in concept, design, and implementation of the project? Details thereof
+35 | Whether Quality Assurance is part of the Project, if not, how it is proposed to be ensured?
+36 | Whether O&M is part of Project, if yes, for how many years?
+37 | Whether any innovative/cost effective/ Green technology adopted in the project? Details thereof
+
+72

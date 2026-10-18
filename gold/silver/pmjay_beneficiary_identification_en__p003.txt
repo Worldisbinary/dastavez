@@ -1,0 +1,23 @@
+Beneficiary Identification Guidelines
+
+Guidelines on Process of Beneficiary Identification
+
+1 Brief Process Flow
+
+The core principle for finalizing the operational guidelines for proposed AB PM-JAY is to construct a broad framework as guiding posts for simplifying the implementation of the Mission under the ambit of the policy and the technology while providing requisite flexibility to the States to optimally chalk out the activities related to implementation in light of the peculiarities of their own State/UT, as ownership of implementation of scheme lies with them.
+
+A. AB PM-JAY will target about 10.74 crore poor, deprived rural families and identified occupational category of urban workers' families as per the latest Socio-Economic Caste Census (SECC) data, both rural and urban. Additionally, all such enrolled families under RSBY that do not feature in the targeted groups as per SECC data will be included as well.
+
+B. States covering a much larger population than the AB PM-JAY beneficiary list will need to:
+
+i. Provide a declaration that their eligibility criteria cover AB PM-JAY beneficiaries.
+ii. Setup a process to ensure any family in AB PM-JAY list who may be missed under the State's criteria is covered when they seek care.
+iii. Beneficiaries obtaining treatment should be tagged if they are AB PM-JAY beneficiaries. Reports to MoHFW/ NHA will need to be provided for these beneficiaries.
+iv. Link all AB PM-JAY beneficiaries with the State's Scheme ID and Aadhaar in a defined time period.
+
+C. State/UT will be responsible for carrying out Information, Education and Communication (IEC) activities amongst targeted families such that they are aware of their entitlement, benefit cover, empanelled hospitals and process to avail the services under AB PM-JAY. This will include leveraging village health and nutrition days, making available beneficiary family list at Panchayat office, visit of ASHA workers to each target family and educating them about the scheme, Mass media, etc. among other activities. The following 2 IEC activities are designed to aid in Beneficiary Identification
+
+i. AB PM-JAY Additional Data Collection drive at Gram Sabha's across India took place on 30th April. MoHFW in collaboration with Ministry of Rural Development (MoRD) will drive collection of Ration Card, Mobile Number for each AB PM-JAY household. Similar exercise was carried out for urban beneficiaries in May 2018.
+ii. Government of India will send a personalised letter via mass mail to each targeted family through NHA vendors in states launching AB PM-JAY. The Asha network will be leveraged for distribution of these letters at the village level. This letter will include details about the scheme, toll free helpline number and family details and their ID under AB PM-JAY.
+
+Page 2 of 15

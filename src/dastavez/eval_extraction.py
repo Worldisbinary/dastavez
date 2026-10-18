@@ -48,7 +48,11 @@ def run_extraction_eval(settings, reference: str = "auto") -> dict:
 
     lines = [
         f"Reference: **{ref_kind}**"
-        + ("  (PROVISIONAL: not human double-annotated gold)" if ref_kind == "silver" else ""),
+        + (
+            f"  (AI-transcribed reference set, {len(rows)} pages, not human-verified)"
+            if ref_kind == "silver"
+            else ""
+        ),
         "",
         "| Stratum | n | pypdf sim | layout sim | cascade sim | pypdf CER | cascade CER |",
         "|---|---:|---:|---:|---:|---:|---:|",

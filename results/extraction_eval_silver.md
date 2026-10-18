@@ -1,8 +1,8 @@
-Reference: **silver**  (PROVISIONAL: not human double-annotated gold)
+Reference: **silver**  (AI-transcribed reference set, 30 pages, not human-verified)
 
 | Stratum | n | pypdf sim | layout sim | cascade sim | pypdf CER | cascade CER |
 |---|---:|---:|---:|---:|---:|---:|
-| english_digital | 4 | 0.987 | 0.990 | 0.990 | 0.024 | 0.019 |
-| hindi_digital | 4 | 0.216 | 0.223 | 0.932 | 0.936 | 0.120 |
-| scanned | 4 | 0.298 | 0.303 | 0.860 | 0.760 | 0.208 |
-| all | 12 | 0.500 | 0.506 | 0.928 | 0.573 | 0.116 |
+| english_digital | 10 | 0.894 | 0.895 | 0.954 | 0.115 | 0.078 |
+| hindi_digital | 10 | 0.195 | 0.196 | 0.935 | 0.899 | 0.115 |
+| scanned | 10 | 0.595 | 0.589 | 0.917 | 0.442 | 0.124 |
+| all | 30 | 0.561 | 0.560 | 0.935 | 0.485 | 0.106 |

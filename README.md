@@ -9,9 +9,11 @@ evidence is weak. The hard part on real government PDFs turned out to be getting
 at all, so extraction is measured as carefully as retrieval.
 
 > **Status of the numbers.** Retrieval numbers below are real runs on this corpus.
-> Extraction numbers are **provisional**: they are scored against a 12-page *silver* reference
-> transcribed by an AI assistant, not against the double-annotated human gold set, which is
-> pending (tooling and instructions are in this repo, see [Double annotation](#double-annotation)).
+> Extraction numbers are scored against an **AI-transcribed reference set (30 pages, not
+> human-verified)**: every sampled page was transcribed by Claude (Anthropic) from the page image,
+> without seeing any extractor output. It is not human gold. The annotation tooling supports human
+> single or double annotation, which would replace this reference set (see
+> [Human annotation](#human-annotation)).
 
 ---
 
@@ -86,28 +88,34 @@ Reasons across all pages: `text_layer_ok` 207, `script_mismatch_legacy_font` 134
 `undecodable_glyphs` 2, `garbled_text` 1. OCR: Tesseract 5.5.3 (LSTM, `tessdata_fast` eng + hin).
 Full ingestion took 622 s on a laptop CPU. Source: `results/ingest_summary.json`.
 
-### Extraction quality (PROVISIONAL, silver reference)
+### Extraction quality (AI-transcribed reference set, 30 pages, not human-verified)
 
 Mean normalised text similarity (1 = identical) and character error rate against the
-provisional reference, 4 pages per stratum from the fixed-seed gold sample
-(`results/extraction_eval_silver.md`):
+AI-transcribed reference set: all 30 pages of the fixed-seed sample, 10 per stratum
+(`results/extraction_eval_silver.md`; the code still calls this reference kind `silver`):
 
 | Stratum | n | pypdf sim | layout sim | cascade sim | pypdf CER | cascade CER |
 |---|---:|---:|---:|---:|---:|---:|
-| english_digital | 4 | 0.987 | 0.990 | 0.990 | 0.024 | 0.019 |
-| hindi_digital | 4 | 0.216 | 0.223 | 0.932 | 0.936 | 0.120 |
-| scanned | 4 | 0.298 | 0.303 | 0.860 | 0.760 | 0.208 |
-| **all** | 12 | **0.500** | 0.506 | **0.928** | 0.573 | 0.116 |
+| english_digital | 10 | 0.894 | 0.895 | 0.954 | 0.115 | 0.078 |
+| hindi_digital | 10 | 0.195 | 0.196 | 0.935 | 0.899 | 0.115 |
+| scanned | 10 | 0.595 | 0.589 | 0.917 | 0.442 | 0.124 |
+| **all** | 30 | **0.561** | 0.560 | **0.935** | 0.485 | 0.106 |
+
+Bootstrap 95% intervals on overall similarity: pypdf 0.41-0.71, cascade 0.90-0.96.
 
 Read this carefully:
 
-* The reference is **silver**: one pass by an AI assistant reading page images (it did not see
-  any system output). It is not the human, double-annotated gold. With n = 4 per stratum the
-  bootstrap intervals are wide (see the JSON).
-* English digital pages are already fine with pypdf; the gain is entirely on Hindi and scanned
-  pages, which is where routing sends OCR.
-* The weakest page is a skewed bilingual scan (`haryana_unemployment_allowance_rules_2014` p6,
-  cascade similarity 0.67): Tesseract's page segmentation dropped lines beside margin notes.
+* The reference is **AI-transcribed**: one pass plus one self-review pass by Claude (Anthropic)
+  reading the rendered page images, without looking at any extractor output. Nobody has verified it
+  by hand. An AI transcriber may share error patterns with OCR, which would flatter the cascade.
+* On English digital pages pypdf and the cascade agree (similarity above 0.96 on 9 of 10 pages).
+  The English gap in the table comes from one flowchart page (`pmsvanidhi_loan_og_en` p22): its
+  text layer gives pypdf almost nothing usable (0.03) and OCR is routed in (0.62; the
+  reading order of a diagram is a judgment call).
+* The gain is concentrated on Hindi and scanned pages, which is where routing sends OCR.
+* Weakest cascade pages: the flowchart above, a skewed bilingual scan
+  (`haryana_unemployment_allowance_rules_2014` p6, 0.67, where Tesseract dropped lines beside margin
+  notes) and a Hindi form table (`pmay_u2_guidelines_2024_hi` p73, 0.80).
 
 ### Retrieval and answers
 
@@ -179,20 +187,22 @@ the parallel pages of the English PMAY-U / Haryana documents, which the multilin
 model can reach cross-lingually; Hindi-only documents (PM Ujjwala, the 2018 amendments) are
 unreachable without OCR.
 
-## Double annotation
+## Human annotation
 
-The gold set is a stratified, fixed-seed sample of 30 pages (`gold/sample.json`, seed 20261016,
-10 per stratum, blank pages excluded). Two people transcribe every page independently:
+The sample is a stratified, fixed-seed set of 30 pages (`gold/sample.json`, seed 20261016,
+10 per stratum, blank pages excluded). The current reference for these pages is the AI-transcribed
+set in `gold/silver/` (see `gold/silver/README.md`). The annotation tooling supports human single or
+double annotation, which would replace this reference set; with two annotators the workflow is:
 
 ```bash
 dastavez gold prepare       # renders gold/pages/*.png, creates empty gold/annotator_{a,b}/*.txt
 # ... both annotators transcribe, following docs/ANNOTATION_GUIDE.md ...
 dastavez gold agree         # inter-annotator similarity + CER per stratum -> results/annotation_agreement.json
 dastavez gold adjudicate    # identical pages -> gold/final/; others -> gold/adjudication/<id>.md word diffs
-dastavez eval-extraction    # scores pypdf / layout / cascade against gold/final/ (falls back to silver)
+dastavez eval-extraction    # scores pypdf / layout / cascade against gold/final/ (falls back to gold/silver/)
 ```
 
-Agreement is reported as similarity and CER *between annotators*, which is the noise floor for
+A single annotator can instead save corrected transcriptions directly to `gold/final/`. Agreement is reported as similarity and CER *between annotators*, which is the noise floor for
 every extraction number. Disagreements are resolved against the page image into `gold/final/`.
 `docs/ANNOTATION_GUIDE.md` has the transcription rules (matras, conjuncts, numerals, tables,
 headers, margin notes).
@@ -256,7 +266,9 @@ pgvector integration tests). In CI the 4 pgvector tests run against the service 
 
 ## Limitations
 
-* Extraction results are provisional until the human double-annotated gold is complete.
+* Extraction results are measured against an AI-transcribed reference set (30 pages, not
+  human-verified), which could share error patterns with OCR. Human single or double annotation,
+  supported by the tooling, would replace it.
 * 58 evaluation questions, drafted by the builder (with an AI assistant) from the documents and
   awaiting owner review; wording overlap with the source favours lexical retrieval. 10 are
   unanswerable, so the not-found accuracy has very wide uncertainty.
@@ -275,7 +287,7 @@ src/dastavez/               parse, routing, ocr, ingest, chunking, lexical (BM25
                             rerank, store (memory/pgvector), retrieve, answer, verify, metrics,
                             annotation, eval_extraction, eval_retrieval, cli, api, web/index.html
 eval/questions.jsonl        58 questions with gold pages (48 answerable, 10 unanswerable)
-gold/                       sample.json, annotator_a/, annotator_b/, silver/ (provisional), final/ (after adjudication)
+gold/                       sample.json, annotator_a/, annotator_b/, silver/ (AI-transcribed reference, 30 pages), final/ (human, after adjudication)
 results/                    ingest summary, extraction and retrieval evaluation outputs
 docs/                       ANNOTATION_GUIDE.md, INTERVIEW_GUIDE.md
 tests/                      pytest suite

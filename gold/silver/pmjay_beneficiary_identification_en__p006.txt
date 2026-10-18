@@ -1,0 +1,34 @@
+Beneficiary Identification Guidelines
+
+Timeline – within a period of 15 days, after receiving the approval from MoHFW/NHA, the State/UT may complete the preparatory activities to initiate the implementation and beneficiary identification process.
+
+The State will need to:
+
+i. Ensure the availability of requisite hardware, software and allied infrastructure required for beneficiary identification and AB PM-JAY e-card printing. Beneficiary Identification Software/ Application/ platform will be provided free of cost by MoHFW/NHA. Specifications for these will be provided by MoHFW/NHA.
+
+ii. Availability of printed booklets, in abundant quantities at each Contact point, which will be given to beneficiaries along with the AB PM-JAY e-cards after verification. The booklet/pamphlet shall provide the following details:
+Details about the AB PM-JAY benefits
+Process of taking the benefits under AB PM-JAY and policy period
+List of the empanelled network hospitals in the district along with address and contact details (if available)
+The names and details of the key contact person/persons in the district
+Toll-free number of AB PM-JAY call centre (if available)
+Details of DNO for any further contact
+
+iii. State/State Health Agency (SHA) shall identify and set-up team(s) which shall have the capacities to handle hardware and basic software support, troubleshooting etc.
+
+iv. Training of trainers for this purpose will be organised by MoHFW/NHA.
+
+The State shall ensure availability of above, in order to carry out all the activities laid down in this guideline.
+
+B. Preparation of AB PM-JAY target data
+
+Responsibility of – MoHFW
+
+Timeline – Preparation of SECC data by 15th March
+
+MoHFW has decided to use latest Socio-Economic Caste Census (SECC) data as a source/base data for validation of beneficiary families under the AB PM-JAY. Based on SECC data, number of families in each State, that will be eligible for central subsidy under the AB PM-JAY, will be identified. The categories in rural and urban that will be covered under AB PM-JAY are given as follows:
+
+For Rural
+Total deprived Households targeted for AB PM-JAY who belong to one of the six deprivation criteria amongst D1, D2, D3, D4, D5 and D7:
+
+Page 5 of 15

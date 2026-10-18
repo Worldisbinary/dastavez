@@ -1,0 +1,31 @@
+Flow 5 Auto-pick up of preferred applications and sanctioning by Lender Admin.
+
+F
+
+ULB review the application marked not interest by bank
+
+ULB Mark the application as Ineligible
+
+ULB forwards the application to the lender
+
+Application moves to Resubmitted Application Bin
+
+Lender will be able to mark application as not interested only if pending for sanction for the last three months
+
+Application will be send to Lender HO
+
+Lender HO Approve the rejection
+
+Application will be marked as ineligable
+
+END
+
+Lender admin further marks the application as sanctioned after processing the application as per bank regular process.
+
+After sanctioning, Lender admin marks the application as disbursed
+
+UPI ID Validation with NPCI through API
+
+***********
+
+22
