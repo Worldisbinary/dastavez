@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Corpus PDFs are third-party documents: fetched by `dastavez corpus download`, never committed
+corpus/pdfs/
+*.pdf
+*.pdf.mismatch
+
+# Model caches and derived data (regenerable)
+.cache/
+data/
+gold/pages/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

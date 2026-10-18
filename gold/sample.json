@@ -1,0 +1,223 @@
+{
+  "seed": 20261016,
+  "per_stratum": 10,
+  "eligible_pages": {
+    "english_digital": 211,
+    "hindi_digital": 134,
+    "scanned": 20
+  },
+  "min_page_chars": 80,
+  "created": "2026-10-16",
+  "pages": [
+    {
+      "sample_id": "pmay_u2_guidelines_2024_en__p005",
+      "doc_id": "pmay_u2_guidelines_2024_en",
+      "page": 5,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_en__p048",
+      "doc_id": "pmay_u2_guidelines_2024_en",
+      "page": 48,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_en__p078",
+      "doc_id": "pmay_u2_guidelines_2024_en",
+      "page": 78,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_en__p086",
+      "doc_id": "pmay_u2_guidelines_2024_en",
+      "page": 86,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_en__p104",
+      "doc_id": "pmay_u2_guidelines_2024_en",
+      "page": 104,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmjay_beneficiary_identification_en__p003",
+      "doc_id": "pmjay_beneficiary_identification_en",
+      "page": 3,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmjay_beneficiary_identification_en__p006",
+      "doc_id": "pmjay_beneficiary_identification_en",
+      "page": 6,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmsvanidhi_loan_og_en__p004",
+      "doc_id": "pmsvanidhi_loan_og_en",
+      "page": 4,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmsvanidhi_loan_og_en__p009",
+      "doc_id": "pmsvanidhi_loan_og_en",
+      "page": 9,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmsvanidhi_loan_og_en__p022",
+      "doc_id": "pmsvanidhi_loan_og_en",
+      "page": 22,
+      "stratum": "english_digital",
+      "language": "en"
+    },
+    {
+      "sample_id": "haryana_regs_2007_hi__p001",
+      "doc_id": "haryana_regs_2007_hi",
+      "page": 1,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "haryana_regs_2007_hi__p014",
+      "doc_id": "haryana_regs_2007_hi",
+      "page": 14,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "haryana_regs_2007_hi__p016",
+      "doc_id": "haryana_regs_2007_hi",
+      "page": 16,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_hi__p005",
+      "doc_id": "pmay_u2_guidelines_2024_hi",
+      "page": 5,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_hi__p024",
+      "doc_id": "pmay_u2_guidelines_2024_hi",
+      "page": 24,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_hi__p026",
+      "doc_id": "pmay_u2_guidelines_2024_hi",
+      "page": 26,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_hi__p041",
+      "doc_id": "pmay_u2_guidelines_2024_hi",
+      "page": 41,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_hi__p050",
+      "doc_id": "pmay_u2_guidelines_2024_hi",
+      "page": 50,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_hi__p073",
+      "doc_id": "pmay_u2_guidelines_2024_hi",
+      "page": 73,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "pmay_u2_guidelines_2024_hi__p102",
+      "doc_id": "pmay_u2_guidelines_2024_hi",
+      "page": 102,
+      "stratum": "hindi_digital",
+      "language": "hi"
+    },
+    {
+      "sample_id": "haryana_unemployment_allowance_rules_2014__p002",
+      "doc_id": "haryana_unemployment_allowance_rules_2014",
+      "page": 2,
+      "stratum": "scanned",
+      "language": "hi+en"
+    },
+    {
+      "sample_id": "haryana_unemployment_allowance_rules_2014__p006",
+      "doc_id": "haryana_unemployment_allowance_rules_2014",
+      "page": 6,
+      "stratum": "scanned",
+      "language": "hi+en"
+    },
+    {
+      "sample_id": "mgnrega_schedule_amend_gazette__p001",
+      "doc_id": "mgnrega_schedule_amend_gazette",
+      "page": 1,
+      "stratum": "scanned",
+      "language": "hi+en"
+    },
+    {
+      "sample_id": "mgnrega_schedule_amend_gazette__p005",
+      "doc_id": "mgnrega_schedule_amend_gazette",
+      "page": 5,
+      "stratum": "scanned",
+      "language": "hi+en"
+    },
+    {
+      "sample_id": "mgnrega_schedule_amend_gazette__p006",
+      "doc_id": "mgnrega_schedule_amend_gazette",
+      "page": 6,
+      "stratum": "scanned",
+      "language": "hi+en"
+    },
+    {
+      "sample_id": "mgnrega_schedule_amend_gazette__p007",
+      "doc_id": "mgnrega_schedule_amend_gazette",
+      "page": 7,
+      "stratum": "scanned",
+      "language": "hi+en"
+    },
+    {
+      "sample_id": "mgnrega_schedule_amend_gazette__p008",
+      "doc_id": "mgnrega_schedule_amend_gazette",
+      "page": 8,
+      "stratum": "scanned",
+      "language": "hi+en"
+    },
+    {
+      "sample_id": "pmay_u_amendments_2018_hi__p001",
+      "doc_id": "pmay_u_amendments_2018_hi",
+      "page": 1,
+      "stratum": "scanned",
+      "language": "hi"
+    },
+    {
+      "sample_id": "pmkisan_physical_verification_2019_en__p002",
+      "doc_id": "pmkisan_physical_verification_2019_en",
+      "page": 2,
+      "stratum": "scanned",
+      "language": "en"
+    },
+    {
+      "sample_id": "pmkisan_physical_verification_2019_en__p003",
+      "doc_id": "pmkisan_physical_verification_2019_en",
+      "page": 3,
+      "stratum": "scanned",
+      "language": "en"
+    }
+  ]
+}

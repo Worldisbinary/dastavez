@@ -1,0 +1,26 @@
+Pradhan Mantri Awas Yojana (Urban) 2.0 : Scheme Guidelines
+
+9.11.2 Under Model-2, Government will provide TIG for the ARH project using innovative & alternate technology for speedier, sustainable, resource efficient and disaster resilient construction.
+
+9.11.3 TIG shall be released by MoHUA as Central Assistance and State/UT Government shall also release their share of TIG for construction of ARH projects as under:
+
+Type of Unit | Carpet Area applicable for TIG | Permissible TIG amount
+Single Bedroom | Maximum 30 sqm | GoI: ₹3,000/sqm State Share: ₹2,000/sqm
+Dormitory | Maximum 10 sqm | GoI: ₹3,000/sqm State Share: ₹2,000/sqm
+Double Bedroom | Maximum 60 sqm | GoI: ₹3,000/sqm State Share: ₹2,000/sqm
+
+9.11.4 Central Assistance of TIG will be released by MoHUA to State/UTs in three instalments at the ratio of 40:40:20 on recommendations of BMTPC (as technical partner of MoHUA) for further release to the implementing agencies as under:
+
+a. First instalment of 40% will be released on sanctioning of the projects by CSMC, receipt of all Statutory approvals and necessary NOCs, grounding of the project and corresponding Geo-tagging of plinth level in MIS.
+
+b. Second instalment of 40% will be released based on submission of Utilization Certificate of 75% of earlier instalment as per GFR 2017 and commensurate physical and financial progress and corresponding Geo-tagging of super structure in MIS
+
+c. Third and final instalment of 20% will be released based on submission of Utilization Certificate of 100% of earlier instalment as per GFR 2017, submission of Completion Certificate issued by the local authorities as per the prescribed format and corresponding Geo-tagging in MIS.
+
+9.11.5 States/UTs shall also release their share along with the Central Assistance of TIG to Public/ Private Agencies in the similar pattern as above.
+
+9.12 The criteria for release of central assistance under BLC/AHP and ARH is at Annexure-8.
+
+9.13 The format of Utilisation Certificate to be filled by States/UTs under BLC/AHP and ARH is at Annexure-9 and its enclosure. The format for Completion Certificate to be filled by States/ UTs under BLC, AHP/ARH is at Annexure-10 (A&B).
+
+34

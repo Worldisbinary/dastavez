@@ -1,0 +1,28 @@
+Pradhan Mantri Awas Yojana (Urban) 2.0 : Scheme Guidelines
+
+Annexure-5B
+(Para 5.2.16 (A-ii) of the Guidelines)
+
+Format for Projects under Affordable Housing in Partnership (AHP) on Government Land
+(Land title should be in the name of Govt./Public agency only)
+(To be filled by States/UTs/ULBs for Sanctioning projects by CSMC)
+
+Basic information of the Project
+1 | Name of the State
+2 | Name of the ULB/UDA
+3 | Project Name and Project Code
+4 | State-Level Nodal Agency
+5 | Implementing Agency (Urban Local Body, Development Authority/Housing Board/ Urban Improvement Trust)
+6 | Project type (Land existing on Slum/ greenfield Land)
+7 | Whether encumbrance free land in the name of proposing agency is available for the project or not? Details thereof.
+8 | Comments of SLAC after techno economic appraisal of DPR
+9 | Date of approval by State Level Sanctioning and Monitoring Committee (SLSMC)
+10 | Mode of Tendering: (i) Engineering Procurement Construction (EPC) (ii) Public Private Partnership (PPP) (iii) Any other, please specify
+11 | Technology: (i) Innovative Technology (technology should be identified through transparent manner) Please specify the details.
+(ii) Conventional Technology Please specify the details.
+12 | Identified Approved Innovative Technology Proposed
+13 | Whether design of houses are as per guidelines/ norms? (Yes/No)
+14 | Whether disaster resistant features and durability of the structure as per relevant Indian Standards is being ensured? (Yes/ No)
+15 | Whether structure design has been vetted by IIT/ NIT or any other? (Yes/No)
+
+64

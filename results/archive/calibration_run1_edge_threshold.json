@@ -1,0 +1,7 @@
+{
+  "gates": {
+    "cross_encoder": 0.9896,
+    "lexical": 0.6228
+  },
+  "split": "dev = sha1(id) % 5 == 0"
+}

@@ -1,0 +1,144 @@
+{
+  "pages": 378,
+  "routes": {
+    "text_layer": 207,
+    "ocr_rejected": 14,
+    "ocr": 157
+  },
+  "reasons": {
+    "text_layer_ok": 207,
+    "scanned_with_text_layer": 8,
+    "empty_text_layer": 23,
+    "garbled_text": 1,
+    "undecodable_glyphs": 2,
+    "script_mismatch_legacy_font": 134,
+    "broken_devanagari": 3
+  },
+  "documents": {
+    "pmkisan_og_2020_en": {
+      "pages": 12,
+      "routes": {
+        "text_layer": 12
+      },
+      "seconds": 5.0
+    },
+    "pmkisan_amend_8_1_2019_en": {
+      "pages": 1,
+      "routes": {
+        "text_layer": 1
+      },
+      "seconds": 0.3
+    },
+    "pmkisan_physical_verification_2019_en": {
+      "pages": 3,
+      "routes": {
+        "ocr_rejected": 1,
+        "ocr": 2
+      },
+      "seconds": 8.0
+    },
+    "pmsvanidhi_scheme_guidelines_en": {
+      "pages": 15,
+      "routes": {
+        "text_layer": 15
+      },
+      "seconds": 6.9
+    },
+    "pmsvanidhi_loan_og_en": {
+      "pages": 22,
+      "routes": {
+        "text_layer": 18,
+        "ocr": 4
+      },
+      "seconds": 10.0
+    },
+    "standup_india_faq_2022_en": {
+      "pages": 3,
+      "routes": {
+        "text_layer": 3
+      },
+      "seconds": 1.4
+    },
+    "standup_india_factsheet_2022_en": {
+      "pages": 6,
+      "routes": {
+        "text_layer": 5,
+        "ocr_rejected": 1
+      },
+      "seconds": 3.7
+    },
+    "pmay_u2_guidelines_2024_en": {
+      "pages": 112,
+      "routes": {
+        "ocr_rejected": 7,
+        "text_layer": 105
+      },
+      "seconds": 61.4
+    },
+    "pmjay_beneficiary_identification_en": {
+      "pages": 16,
+      "routes": {
+        "text_layer": 16
+      },
+      "seconds": 6.5
+    },
+    "haryana_regs_2007_en": {
+      "pages": 32,
+      "routes": {
+        "text_layer": 32
+      },
+      "seconds": 9.3
+    },
+    "pmay_u2_guidelines_2024_hi": {
+      "pages": 112,
+      "routes": {
+        "ocr": 107,
+        "ocr_rejected": 5
+      },
+      "seconds": 377.1
+    },
+    "pmuy_7years_pib_2023_hi": {
+      "pages": 4,
+      "routes": {
+        "ocr": 4
+      },
+      "seconds": 10.0
+    },
+    "haryana_regs_2007_hi": {
+      "pages": 23,
+      "routes": {
+        "ocr": 23
+      },
+      "seconds": 66.2
+    },
+    "pmay_u_amendments_2018_hi": {
+      "pages": 3,
+      "routes": {
+        "ocr": 3
+      },
+      "seconds": 9.1
+    },
+    "mgnrega_schedule_amend_gazette": {
+      "pages": 8,
+      "routes": {
+        "ocr": 8
+      },
+      "seconds": 25.1
+    },
+    "haryana_unemployment_allowance_rules_2014": {
+      "pages": 6,
+      "routes": {
+        "ocr": 6
+      },
+      "seconds": 22.3
+    }
+  },
+  "ocr_engine": "tesseract v5.5.3.20260724",
+  "ocr_languages": [
+    "eng",
+    "hin",
+    "osd",
+    "script/Devanagari"
+  ],
+  "seconds": 622.3
+}

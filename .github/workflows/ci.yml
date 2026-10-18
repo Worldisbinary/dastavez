@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "ruff>=0.6"
+      - run: ruff check .
+      - run: ruff format --check .
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: dastavez
+          POSTGRES_PASSWORD: dastavez
+          POSTGRES_DB: dastavez
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U dastavez"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DASTAVEZ_DATABASE_URL: postgresql://dastavez:dastavez@localhost:5432/dastavez
+      # tests use the offline hashing embedder / lexical reranker; no model downloads in CI
+      DASTAVEZ_EMBEDDER: hash
+      DASTAVEZ_RERANKER: lexical
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Tesseract (eng + hin) and a Devanagari font
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-hin fonts-noto-core fonts-dejavu-core
+          tesseract --version
+          tesseract --list-langs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install package
+        run: pip install -e ".[dev,pg,ocr]"
+      - name: Run tests (unit + OCR + pgvector integration)
+        run: pytest -q -rs
